@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta property="article:published_time" content="2021-06-24T15:51:20.031Z" />
+</head>
+
+<body>
+    <main>
+        <article>
+            <section>
+                <div class="pw-post-title">
+                    <h1>How Long Should I Run an A/B Test?</h1>
+                </div>
+                <p class="pw-post-body-paragraph">
+                    The duration of an A/B test depends on various factors such as the magnitude of the 
+                    difference you expect to observe between the two variants, the level of statistical 
+                    significance you want to achieve, and the amount of traffic or data you have.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    However, as a general rule, an A/B test should run for a minimum of one week and 
+                    ideally for at least two weeks to ensure that you have collected a sufficient amount 
+                    of data to make an informed decision. If the sample size is small or the expected 
+                    difference between the variants is large, the test may take less time to reach a 
+                    conclusion. On the other hand, if the sample size is large or the expected difference 
+                    between the variants is small, the test may take longer to achieve statistical 
+                    significance.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    It's important to note that you should not stop the test prematurely. A common misstep
+                    of less experienced testers is to prematurely stop an experiment based on extreme 
+                    preliminary results, especially where those initial results show strong statistical
+                    significance. A best practice to avoid this mistake is to always run a power analysis
+                    before launching an A/B test to determine the required sample size and duration you
+                    need to acheive before you stop an A/B test.  
+                </p>
+                <p class="pw-post-body-paragraph">                  
+                    What is a power analysis?
+                </p>
+                <p class="pw-post-body-paragraph">                    
+                    A power analysis is a statistical technique used to determine the sample size required 
+                    to detect a specific effect size with a certain level of statistical power and 
+                    significance. In other words, it helps you estimate the probability of detecting a true 
+                    difference between two groups (such as the control and experimental group in an A/B 
+                    test) if such a difference exists, given a certain level of uncertainty and variability 
+                    in the data.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    The statistical power of a test is the probability of correctly rejecting the null 
+                    hypothesis when it is false. It depends on several factors, such as the sample size, the 
+                    effect size, the level of significance, and the variability of the data. Power analysis 
+                    takes into account these factors and helps you determine the minimum sample size required 
+                    to achieve a desired level of power and significance.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    To perform a power analysis, you need to specify the effect size you want to detect, the 
+                    significance level you want to use, and the statistical power you want to achieve. Based 
+                    on these parameters, you can calculate the required sample size using various statistical 
+                    formulas or online power analysis calculators.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Power analysis is essential for designing experiments that are statistically valid and 
+                    can detect meaningful differences between groups. By estimating the required sample size 
+                    in advance, you can ensure that you have enough statistical power to detect a significant 
+                    difference between groups and avoid conducting an experiment with insufficient power that 
+                    may result in inconclusive or misleading results.
+                <p class="pw-post-body-paragraph">                  
+                    Should I not check early results?
+                </p>
+                <p class="pw-post-body-paragraph">                  
+                    After you've run you're power analysis, and you have the minimum sample sizes necessary 
+                    to run your A/B test, divide by your expected daily traffic to get the projected minimum 
+                    number of days necessary, then round up to the nearest week or business cycle, depending 
+                    on the sales fluctuation cycle of your product. Some people will say, "don't even look 
+                    at results until you are at or near the end of the testing window". I say, do look, but
+                    don't act, unless you see something broken. Imagine waiting for a month to look at 
+                    results, only to learn the bucketing hasn't been working. You've just wasted a month of
+                    testing! So do track the results to make sure the experiment is working properly, but 
+                    make sure to wait until the predetermined stoping point to call the experiment.
+                </p>
+                <p class="pw-post-body-paragraph"> 
+                    How to interpret a 95% statistical significance with 80% power:
+                </p>
+                <p class="pw-post-body-paragraph"> 
+                    - 80% power - Given the underlying difference between the 2 samples is X, there is an
+                    80% chance the results of the experiment will identify the difference between the 2
+                    samples as being statistically significant
+                </p>
+                <p class="pw-post-body-paragraph"> 
+                    - 95% statistical significance - Given there is no underlying difference between the 
+                    two samples, we are 95% confident the observed difference between the 2 samples is >= Y. 
+                </p>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
