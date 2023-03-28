@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta property="article:published_time" content="2020-10-02T12:19:55.655Z" />
+</head>
+
+<body>
+    <main>
+        <article>
+            <section>
+                <div class="pw-post-title">
+                    <h1>How to build your first Media Mix Model (MMM)</h1>
+                </div>
+                <p class="pw-post-body-paragraph">
+                    First off, what is a Media Mix Model and why should I care?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - A media mix model is a statistical model used to analyze the effectiveness of different advertising media in a marketing campaign. It was first popularized in the 1960s and 1970s. Traditionally, marketing mix models relied on historical sales data and limited advertising channels, such as television, radio, print, and outdoor advertising. In recent years MMMs have taken a back seat, thanks to online advertising providing an almost end to end visibility of the conversion funnel, thanks to their ability to track a device across apps and websites. Thus, allowing marketers to directly tie conversions to specific ad views or ad clicks, and making MMMs obsolete… temporarily.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - With the launch of Apple’s Application Tracking Transparency (ATT) in the very near future, MMMs are once again a hot topic in marketing performance discussions. This is due to the fact ATT will remove the transparency marketers currently enjoy with respect to the performance of each dollar spent online. ATT will essentially roll back the clock with respect to our ability to attribute sales, thus causing a shift to “old-school” approaches.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Is an MMM better than pairing UTM tagging with a last or multi-click attribution model?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - I would suggest looking at both. The more cuts of the data you look at, the better you will understand your data, and the more informed you will be about where to most efficiently spend the next dollar.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - The downside of UTM tagging is that it will always be 100% blind to any view-through events, so top of funnel channels (ie. Facebook) will likely be undervalued. Additionally, click based attribution models cannot capture the impact of each impression. When a user has multiple clicks, which click should receive credit for the conversion? Or should it be the Facebook view-through impression we can’t even see in the data?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - One thing I love about Media Mix Models is their use of complete and credible data. So we aren’t looking at our results having doubts about view-through impression blindness or which channel should really get the attribution. At the most basic level we simply compare our daily spend by channel against our total daily sales or daily conversions in an Ordinary Least Squares (OLS) regression model.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    What is Ordinary Least Squares (OLS) regression?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - Ordinary Least Squares (OLS) regression is a statistical method used to estimate the relationship between a dependent variable and one or more independent variables. The goal of OLS regression is to find the line (or curve) of best fit through a set of data points by minimizing the sum of the squared differences between the predicted and observed values of the dependent variable.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - In OLS regression, the dependent variable (sales or conversions) is the one being predicted or explained by the independent variables (spend by channel). The independent variables are the predictors or explanatory variables that are hypothesized to have a relationship with the dependent variable. Ie. We expect to have W in sales (dependent variable), because we spent X, Y, Z (independent variables) in channels A, B, C.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - OLS regression estimates the relationship between the dependent variable and the independent variables by fitting a linear equation to the data. The equation takes the form:
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - Y = β0 + β1X1 + β2X2 + … + βkXk + ε
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - Where Y is the dependent variable, β0 is the intercept, β1, β2, … βk are the coefficients of the independent variables (X1, X2, … Xk), and ε is the error term.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - The OLS method estimates the values of the coefficients that minimize the sum of the squared differences between the predicted and observed values of the dependent variable. The resulting equation can be used to predict the value of the dependent variable for a given set of values of the independent variables. Ie. Tell the model how much you plan to spend on each channel for a given day, and it will predict the sales or conversions for that day.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    How can I build my own MMM?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - You can build a very simple MMM using ordinary least squares (OLS) regression in Google Sheets by using the built-in function LINEST. Here’s how:
+                </p>
+                <p class="pw-post-body-paragraph">
+                    1. Determine if you want your model to predict daily sales or daily conversions. For this example, let’s predict daily sales.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    2. Open a new Google Sheet and enter the data for daily sales chronologically in column B, with the respective dates in column A. This is not a Time Series model, so the model will not use the dates, but we need to make sure the sales and spend data for each day fall in the same row, so entering it chronologically will make this easier.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    3. Enter the data for daily Facebook prospecting spend in Column C, data for daily Facebook retargeting spend in Column D, data for daily Google Search Brand in Column E, and data for daily Google Search Non-Brand in Column F.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    4. Calculate the mean and standard deviation of your independent (columns C:F) and dependent (column B) variables using the AVERAGE and STDEV functions. This step is not required, but it can be helpful to verify the results of your regression.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    5. Select an empty cell (H2) where you want to display the coefficients of your regression. This cell will be the top left cell of your output table.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    6. Enter the LINEST function with the range of your dependent variable (column B) in the first argument, the range of your independent variables (columns C:F) in the second argument, a value of 1 for the third argument to indicate that you want to include an intercept in your regression, and a value of 1 for the fourth argument to return additional regression statistics. For example:
+                </p>
+                <p class="pw-post-body-paragraph">
+                         =LINEST(B3:B40,C3:F40,1,1)
+                </p>
+                <p class="pw-post-body-paragraph">
+                    How do I interpret the results?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - The top row of the output (row 2) contains the coefficients for each of the variables in reverse order, with the intercept in the right most column (J). The second row of the output (row 3) represents the standard errors of the coefficients in the top row.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - If you set this up the same way as outlined above, H2 is the coefficient for Google Search Non-Brand (Column F) and H3 is the standard error of that coefficient. Column I is Google Search Brand, column J is Facebook retargeting, column K is Facebook prospecting and column L is the intercept.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - The coefficients tell you how much the model expects sales to increase for each dollar spent on that channel. Ie. The bigger the coefficient, the more impactful each dollar spent on that channel has been. The row below the coefficients (row 3) tells us how much confidence we have in the value of that coefficient, where we are roughly 95% confident that the true value of the coefficient is within +/- 2x it’s respective standard error. Ex. if H2 = 1.50 and H3 = 0.25 the model is telling us that for every $1 we spend on Google Search Non-Brand our sales increase by $1.50 and we are 95% confident that the true value of the $1.50 is between $1.00 ($1.50 — 2x0.25) and $2.00 ($1.50 + 2x0.25). The ideal scenario is to see large coefficient values and very small standard errors. Ie. Each dollar spent is very impactful and we have a high level of confidence in each coefficient.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - If the coefficient is small and/or the standard error is large, such that the lower bound of the 95% confidence interval is < 1, then we are less than 95% confident that each dollar spent on that channel returns at least $1. The same exercise can also be applied to higher ROAS targets.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - The last output value I’ll mention is the 3rd row of the first column, H4 if you’re mirroring the example. R-squared, also known as the coefficient of determination, is a statistical measure that represents the proportion of the variation in the dependent variable (daily sales) that is explained by the independent variables (daily spend by channel) in a regression model. It ranges from 0 to 1, with higher values indicating better model fit. An R-squared of 0 indicates that the independent variables in the model does not explain any of the variation in the dependent variable, while an R-squared of 1 indicates that the independent variables perfectly explain all the variation in the dependent variable. In general, an R-squared value of 0.7 or higher is considered a good fit for a regression model, but this can vary depending on the field of study and the nature of the data being analyzed. However, it is important to note that R-squared alone is not a sufficient measure of the quality of a regression model. Other factors such as the significance of the coefficients and the validity of the underlying assumptions of the model should also be considered. Additionally, a high R-squared value does not necessarily mean that the independent variables are the only factors influencing the dependent variable, or that the model is causal in nature.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Shortfalls of this basic MMM:
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - The model assumes spend today will result in sales today. It is possible to spread out sales associated with spend over time, but that is beyond the scope of this basic model.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - This model assumes the relationship between each dollar spent on a channel has a linear relationship with the sales it creates. In reality, there are likely diminishing returns as we spend more money on a channel. Again, this is possible to model, but outside the scope of this basic model.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - This model assumes sales are only a function of channel spend. Ie. it does not account for other factors such as seasonality, promotions, etc. Again, this is possible to model, but outside the scope of this basic model.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Final takeaways:
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - MMM should not replace your current attribution analytics, but it should absolutely be added as an extra cut of the data.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - The example MMM outlined here is the simplest and most basic MMM you can build, and the intent is to hopefully open your eyes to this additional attribution approach and encourage further exploration of MMMs.
+                </p>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
