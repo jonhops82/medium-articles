@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta property="article:published_time" content="2021-02-12T08:55:19.827Z" />
+</head>
+
+<body>
+    <main>
+        <article>
+            <section>
+                <div class="pw-post-title">
+                    <h1>Machine Learning Models Have Human Limitations</h1>
+                </div>
+                <p class="pw-post-body-paragraph">
+                    I am currently part of a small data science/data engineering team which  
+                    recently built a machine learning model to rank or score the efficiency of 
+                    buildings by utility consumption. The company I work for has one of the world's 
+                    largest databases of building utility data and wants to leverage this data to 
+                    signal to investors how “green” a building is, based on a data backed 
+                    efficiency rank or score.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Our approach was to build a machine learning model which would predict the 
+                    utility usage of a building month based on the set of features we passed into 
+                    the model. Once we had the predicted usage, we could compare it to the actual 
+                    usage and then use the ratios to rank/score the buildings. Where a building 
+                    with actual usage much lower than predicted would receive a good score/rank 
+                    and a building with actual usage much higher than predicted would receive a 
+                    bad score/rank.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    During feature selection we realized there were many features we wanted, but
+                    most were not realistically obtainable. After looking at what we had available 
+                    we settled on the following features: building use type, square footage, 
+                    heating and cooling degree days (measures of energy consumption required to 
+                    heat or cool buildings), LEED certifications, country, and building age. Note: 
+                    This list has been truncated for privacy reasons.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    As we moved into model selection most of us were still wishing we had more 
+                    features to pass into the model to improve the model’s predictive ability. Then 
+                    a light bulb went off: we should actually remove some of the features! This was 
+                    not an easy sell to the team as the general consensus was that our goal was to 
+                    build a model which would predict the utility usage of a building as accurately 
+                    as possible, and removing features would only reduce the accuracy of the model.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    But, creating the most accurate utility usage prediction model was not our 
+                    ultimate goal. At the end of the day, the true goal was to help investors 
+                    understand how to rank/score how “green” a building was within its respective 
+                    building use type (ie. warehouse, retail, commercial, residential, data center 
+                    etc). What we actually needed the ML model to generate was a baseline (predicted 
+                    usage) so we could compare it to the actual usage. We had been thinking about it 
+                    all wrong! We didn’t want a super accurate prediction model, we wanted a baseline 
+                    model.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Here is an extreme example to highlight why this was the case:
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - Building A and B are both 20k square foot office buildings with similar heating 
+                    and cooling days. If building A uses 100 units of electricity and building B uses 
+                    200 units of electricity, then an investor would rightly conclude building A is 
+                    more "green" than building B
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - In this example, if we limit our features to those mentioned (building use 
+                    type, square feet, and heating and cooling days) the model would produce the same 
+                    predicted usage or “baseline” estimate for these 2 buildings (lets assuume 160 
+                    units of electricity). Building A uses 100/160 or 62.5% of the baseline while 
+                    building B uses 200/160 or 125% of the baseline. Thus building A is more 
+                    efficient, and would have a better rank/score than building B, as expected.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    - Alternatively, if we had passed in additional features, such as LEED 
+                    certifications, country, and building age, in an effort to get the most accurate 
+                    estimate possible, we would no longer have baseline usages, and it would create 
+                    misleading results in our rankings/scores. Using the same 2 buildings, but now 
+                    passing the model these 3 additional features: Building A is a year old with a LEED 
+                    platinum certification in Copenhagen, Denmark. Meanwhile, building B is 70 years 
+                    old with no certifications in Detroit, Michigan. Given the model has been trained 
+                    on these additional features, it would expect building A to use less electricity 
+                    because it is newer, has the highest LEED certification and it knows buildings in 
+                    Denmark use less electricity than buildings in the US. Building A prediction = 90 
+                    units of electricity, building B prediction = 220 units of electricity. Building A 
+                    uses 100/90 = 111% of predicted, while building B uses 200/220 = 91% of predicted. 
+                    Thus building B would have a better rank/score if we optimized the model to be as 
+                    accurate as possible rather than generating a baseline. A misleading result for 
+                    investors.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    The lesson here is that all models are limited by whoever builds them. We call them 
+                    Machine Learning and Artificial Intelligence, but ultimately, they are all built by 
+                    humans. Humans write the code behind all models, so even though they sound impervious
+                    to human error, these models are just as likely to have mistakes. So if you’re a subject 
+                    matter expert and you’re looking at numbers that look off, don’t be afraid to push back 
+                    and ask to understand how the model was built and cahllenge its underlying assumptions. 
+                    Alternatively, you’re the one building the model, be sure to fully understand the end 
+                    goal of the model and include your stakeholders from the start to avoid missteps such 
+                    as the one outlined here.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Our team was fortunate to have strong statistical aptitude and we still made a temporary
+                    mistep. That being said, not all ML teams have backgrounds in statistical modeling, and
+                    this will only continue to become more common as statistical packages become more and 
+                    more accessible to those who can write a few lines of Python or R. So remember to 
+                    speak up when you don't understand something and continue to keep cross functional 
+                    communication strong.
+                </p>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
