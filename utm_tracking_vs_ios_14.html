@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta property="article:published_time" content="2022-01-01T12:00:00.000Z" />
+    <meta property="article:published_time" content="2020-09-29T15:37:22.235Z" />
 </head>
 
 <body>
@@ -10,24 +10,28 @@
         <article>
             <section>
                 <div class="pw-post-title">
-                    <h1>Backdating your Medium posts!</h1>
+                    <h1>UTM Tracking will NOT Protect Performance Marketing from iOS 14's Privacy Updates</h1>
                 </div>
                 <p class="pw-post-body-paragraph">
-                    This is a test HTML page that you can import to Medium as 
-                    a template to backdate your post.
+                    A couple months back, Apple released iOS 14. Within this update is a promise to increase the privacy of user data through the introduction of Application Tracking Transparency (ATT). Fortunately, Apple has decided to push back the launch of ATT until early 2021, so there is some time to prepare, but what will this update actually do?
                 </p>
                 <p class="pw-post-body-paragraph">
-                    You'll know when you've successfully backdated your post
-                    by looking at the bottom of your article when you import
-                    to Medium: it should say something like: "Originally 
-                    published at *** on [Whatever your date is]."
+                    Currently, all Apple devices have a unique identifier, Apple’s Identifier for Advertisers (IDFA). Because all Apple devices have a unique consistent identifier, the browsing and purchasing history of that device can easily be tracked, shared and aggregated across all apps and websites it visits. The launch of ATT will require app developers to obtain explicit permission from users before tracking their activity across other apps and websites. In other words, if a user enables ATT, each app or website will only have access to its own first party data. As I understand it, this will be accomplished by hiding a device’s IDFA. Without the IDFAs, when a user clicks on a Facebook ad and lands on your site, the Facebook pixel you installed on your site will no longer be able to tie that user’s Facebook activity to their activity on your site.
                 </p>
                 <p class="pw-post-body-paragraph">
-                    If you enjoyed this tutorial and method, feel free to 
-                    drop me a follow on Medium and Github.
+                    Facebook will still know who clicks and the number of clicks, and you the app or website owner will be able to see who buys and what they buy, but the connector between those 2 datasets (IDFA via Facebook’s Pixel) will no longer work. Ie. the only measure of ad performance for those who opt into ATT will be click through rates. Yikes!
                 </p>
                 <p class="pw-post-body-paragraph">
-                    Thanks, and bye!
+                    But what about UTM tracking, won’t that allow us to continue to understand attribution, thus allocating spend appropriately and continuing to have similar performance? Urchin Tracking Module (UTM) parameters can help reduce the ATT blow, but performance post ATT will still suffer from what it is today for 2 main reasons:
+                </p>
+                <p class="pw-post-body-paragraph">
+                    1. First off, UTMs only fire for click events so media buyers will be in the dark for view-through conversions. Ie. A user sees a top funnel ad (ie. Facebook) but doesn’t click, later that user opens a new browser and converts via a lower funnel channel (ie. Google Search or Direct). Because UTMs can’t capture view-throughs, the attribution of top funnel channels will likely be understated.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    2. The much bigger issue will be Facebook’s ability to target and show your ads to people who will actually convert. Currently, Facebook has their tentacles all over the internet. Because their Pixels are literally everywhere, and IDFAs allow them to identify unique devices, they can track the activity of a device across all websites which have a Facebook Pixel. Ie. Facebook has a database of IDFAs and a likelihood to purchase any and every type of product based on the historical click and purchase data of that device across much of the internet. So when you go to Facebook to advertise your novel new dog toy, your prospecting campaign is far from a true prospecting campaign, because Facebook already has a very good idea about who would be interested in your product. The ATT update will no longer allow Facebook to use their 3rd party data to help you target better eyeballs. Ie. welcome to true prospecting.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    So what can we do as media buyers to prepare for this? Do set-up UTM tracking (Google Analytics is free) as it will provide an additional cut of the data and it will help with understanding attribution and spend allocation, but be ready to say goodbye to the ability to exchange $1 for $2 via Facebook advertising, and educate yourself on Media Mix Modeling (MMM). In my next post, I will provide an introduction on how MMM works and how you can build your own MMM in Excel or Google Sheets.
                 </p>
             </section>
         </article>
