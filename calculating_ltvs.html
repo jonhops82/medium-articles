@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta property="article:published_time" content="2022-11-03T09:49:53.320Z" />
+</head>
+
+<body>
+    <main>
+        <article>
+            <section>
+                <div class="pw-post-title">
+                    <h1>Calculating LTVs at an Early Stage Subscription Based Company</h1>
+                </div>
+                <p class="pw-post-body-paragraph">
+                    Calculating the lifetime value (LTV) of a customer can be a useful metric for businesses, 
+                    but it can be challenging for early-stage companies with limited historical data. Here are 
+                    some steps you can take to estimate the LTV in this situation:
+                </p>
+                <p class="pw-post-body-paragraph">
+                    1. Establish some assumptions: Since you don't have much historical data to work with, you 
+                    will need to make some assumptions about your customer behavior. You could start by using 
+                    the data you do have to estimate the average order value (AOV), as well as the average 
+                    number of orders a customer will make across their lifetime. Assuming you do have some data
+                    to work with, the AOV is a rather trivial exercise. Alternatively, the average number of 
+                    lifetime orders is a bit more challenging...
+                    
+                    If you sell a single product and each customer can only have a single subscription, the
+                    average number of lifetime orders is simply the area under the survival curve. Where the
+                    X-axis of a survival curve represents the order number and the Y-axis represents the 
+                    likelihood the average customer completes order number X. So, Y = 100% where X = 1 and 
+                    Y decreases as X increases. In order to generate this survival curve, you'll need to 
+                    start by looking at your limited historical retention data, and fitting a curve to the
+                    few points you do have, in order to project out the rest of the curve. Early on, there 
+                    wont be much data, which means the confidence in this curve is low, but the good news is 
+                    the accuracy of the survival curve will only improve over time with additional data.
+                  
+                    Ex. Let's assume we have the following data points for (order number, survival percentage):
+                    [(1, 100%), (2, 80%), (3, 65%), (4, 55%)]. The quickest and easiest way to calculate the 
+                    LTV is to throw these values into a Google Sheet and create a scatter chart. Then click on 
+                    the chart, click the "Customize" tab in the chart editor on the right, then click "Series".
+                    Next scroll down and check the box next to "Trendline", change the "Label" drop down to 
+                    "Use Equation" and choose the "Type" of best fit line you'd like to use. "Power Series" is
+                    generally the most optimistic, followed by "Logarithmic" and "Exponential". You can take
+                    the equations seen in the chart for each of the best fit lines and use them to calculate 
+                    the Y values of the best fit line for each value of X. 
+                    
+                    (Enter Google Sheet Screen Shot)
+                </p>
+                <p class="pw-post-body-paragraph">
+                    2. Calculate the customer lifetime value: Once you have your assumptions, you can calculate 
+                    the estimated customer lifetime value. The formula for LTV is: LTV = (Average Order Value) 
+                    x (Number of Repeat Transactions) x (Average Customer Lifetime). For example, if you 
+                    estimate an average order value of $50, an average of two repeat transactions per customer, 
+                    and an average customer lifetime of one year, the LTV would be $100.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    3. Monitor and adjust: Keep in mind that your assumptions may change as you gather more 
+                    data and refine your business model. Monitor your LTV over time and adjust your assumptions 
+                    accordingly. For example, if you find that your customer retention rate is higher than 
+                    expected, you may need to adjust your assumptions to reflect that.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    While estimating the LTV of a customer with limited historical data is not an exact science, 
+                    it can still provide valuable insights into your business's long-term profitability and help 
+                    you make data-driven decisions. As you gather more data, you can refine your LTV calculations 
+                    and make more accurate predictions about your customer lifetime value.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Other considerations - coupons
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Different use cases
+                </p>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
