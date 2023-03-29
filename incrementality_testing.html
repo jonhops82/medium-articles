@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta property="article:published_time" content="2021-09-13T18:20:15.479Z" />
+</head>
+
+<body>
+    <main>
+        <article>
+            <section>
+                <div class="pw-post-title">
+                    <h1>Should I be Incrementality Testing my Facebook Ad Spend?</h1>
+                </div>
+                <p class="pw-post-body-paragraph">
+                    Yes! With the launch of Apple's App Tracking Transparency (ATT), 
+                    Facebook (and everyone else) now only have the first party data of
+                    those iOS devices not opting in. Ie. Facebook platform (conversion)
+                    data is not as trustworthy as it once was. 
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Prior to ATT, Facebook had eyes all over the internet thanks to its
+                    Facebook Pixel capturing and sharing back the third party data of all 
+                    of their advertising partners. So if you had a Facebook Pixel on your 
+                    website, Facebook could directly tie all conversions which originated 
+                    from a Facebook click through or view through. Now, Facebook can only 
+                    see what those ATT devices do on Facebook and they have no way of 
+                    knowing which of those click throughs and view throughs end up 
+                    converting. Ie. we have a much worse understanding of how impactful our
+                    top of funnel (Facebook) channels are at driving conversions. 
+                </p>
+                <p class="pw-post-body-paragraph">
+                    In response to ATT, marketers now need a multi-tooled approach, as 
+                    attribution is now a much more difficult puzzle to solve without the
+                    ability to track iOS devices by their unique Identifier For Advertisers 
+                    (IDFAs). Incrementality testing is just one of three tools I find most 
+                    useful in understanding attribution in a post iOS 14 world. Note: I have 
+                    written about the 2 other tools (UTM Tracking, and Media Mix Models) 
+                    in prior posts.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    So what exactly is Incrementality Testing?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Incrementality testing, also known as experimental uplift modeling or 
+                    causal impact testing, is a statistical method used to measure the causal 
+                    impact of a marketing campaign, product feature, or any other intervention 
+                    on a specific business outcome. Here we will focus on its use specifically
+                    in marketing.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    The goal of incrementality testing is to determine whether a particular 
+                    intervention (such as a marketing campaign) causes a statistically 
+                    significant change in the desired outcome, compared to a control group 
+                    that did not receive the intervention.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    To conduct an incrementality test, a randomized controlled experiment is 
+                    typically used. A random sample of the target population is divided into 
+                    two groups: the treatment group, which receives the intervention, and the 
+                    control group, which does not. The outcome is then measured and compared 
+                    between the two groups to determine whether the intervention had a 
+                    significant effect.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Is incrementality testing a type of A/B test?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    A/B testing is a type of experiment where two or more variants of a web 
+                    page, app, or marketing campaign are shown to users at random, and the 
+                    results are compared to determine which variant performs better. A/B 
+                    tests are often used to optimize user experience, conversion rates, or 
+                    other metrics.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Incrementality testing, on the other hand, is a technique used to measure 
+                    the incremental impact of a marketing campaign or other intervention. It 
+                    aims to answer the question: "did this campaign cause an incremental lift 
+                    in sales or other business metrics, or would the same outcome have occurred 
+                    without the campaign?"
+                </p>
+                <p class="pw-post-body-paragraph">
+                    While A/B testing can be used as a tool to measure the incremental impact 
+                    of a campaign, it is not the same as incrementality testing. Incrementality 
+                    testing is typically more complex and involves more sophisticated statistical 
+                    techniques, such as regression analysis or propensity score matching, to 
+                    control for other factors that may have influenced the outcome.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    In summary, while both A/B testing and incrementality testing involve testing 
+                    different versions of a marketing campaign or other intervention, they have 
+                    different objectives and methodologies.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Where should I use incrementality testing in performance marketing?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    The most impactful place to deploy an incrementality testing is optimizing 
+                    budget allocation. An incrementality test can help you determine which 
+                    channels or tactics have the greatest incremental impact on business 
+                    outcomes. By reallocating budgets to the most effective channels, you can 
+                    maximize the return on investment of your marketing efforts.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    More specifically, all marketers should run incrementality testing on 
+                    Facebook advertising spend. With the release of ATT, the impact of Facebook
+                    spend is now very difficult to measure without directly testing it via
+                    an incrementality test.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    How do I set up an Incrementality Test on Facebook spend?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    To set up an incrementality test on Facebook spend, you can follow these 
+                    general steps:
+                </p>
+                <p class="pw-post-body-paragraph">
+                    1. Define your goals: Determine what you want to achieve with your Facebook 
+                    ad spend. For example, you might want to increase sales, leads, or app 
+                    installs.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    2. Choose your audience: Select a group of people to target with your ads. 
+                    This group should be randomly divided into two groups with similar historical
+                    performance: the test group and the control group. For the most basic test,
+                    your audience will be all users.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    3. Set up the test: In the control group, your ads will be shown as usual.
+                    In the test group, the same ads will be shown, but at a different level of 
+                    spend. The goal is for the level of spend between the two groups to be
+                    significantly different. The most common test is to completely turn off 
+                    spend in the test group. Thus showing the true difference in performance
+                    caused by your Facebook ad spend.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    4. Measure the results: After the test is complete, you will need to compare 
+                    the results between the test and control groups. This will help you determine 
+                    whether your Facebook ad spend is driving incremental lift, or if it is simply 
+                    cannibalizing your organic traffic. Keep in mind, conversion data, should come 
+                    directly from your sales data, NOT Facebook.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    5. Analyze the data: Use statistical analysis to determine whether the results 
+                    are statistically significant. If they are, you can confidently conclude that 
+                    your Facebook ad spend is driving incremental lift. If not, you may need to 
+                    adjust your targeting or messaging to achieve better results.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    It's worth noting that setting up an incrementality test can be complex, and 
+                    may require assistance from a Facebook partner or ad agency. However, by 
+                    following these general steps, you can get started on designing and executing 
+                    an incrementality test for your Facebook ad spend.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Will incrementality testing improve my Marketing Mix Model (MMM)?
+                </p>
+                <p class="pw-post-body-paragraph">
+                    Lastly, incrementality testing will also improve your MMM by providing 
+                    additional insights into the effectiveness of each marketing channel in driving
+                    incremental revenue or conversions. Marketing mix models are analytical tools 
+                    that help marketers determine how to allocate their marketing budgets across 
+                    different channels, such as TV, radio, digital, print, and others, based on 
+                    historical data.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    However, MMMs have limitations. The baseline assumption of an MMM is that all 
+                    marketing channels have the same impact on sales or conversions. And this 
+                    will continue to be the case if channel spend levels have remained consistent 
+                    over time. The only way this assumption can be broken is if the historical 
+                    data has varying levels of ad spend by channel and varying levels of spend 
+                    distribution across those channels. Thus, incrementality testing can help 
+                    validate or challenge the baseline assumptions by providing variability in 
+                    historical spend. This helps the MMM isolate the incremental impact of each 
+                    marketing channel, thus providing a more accurate understanding of how much 
+                    each channel contributes to overall revenue or conversions.
+                </p>
+                <p class="pw-post-body-paragraph">
+                    By combining the insights from both marketing mix models and incrementality 
+                    testing, marketers can make more informed decisions about how to allocate their 
+                    budgets, optimize their campaigns, and maximize their ROI. They can also use 
+                    these insights to test new marketing strategies or channels, and measure their 
+                    incremental impact on the business.
+                </p>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
